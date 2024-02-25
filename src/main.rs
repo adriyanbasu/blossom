@@ -1,3 +1,4 @@
+
 enum Errors {}
 
 enum TokenType {
@@ -27,6 +28,12 @@ fn tokenize(code: &str) -> Result<Vec<Token>, Errors> {
             if let Some(tok) = current_token {
                 tokens.push(tok)
             }
+            tokens.push(Token {
+                ty: TokenType::SemiColon,
+                value: String::from(";"),
+            }); 
+        } else { (if c >= 'A' && c <= 'Z') || if c == '_' {
+          if tokens.
         }
     }
     Ok(tokens)
@@ -36,4 +43,4 @@ fn main() {
     let tokens = tokenize("x = 2;").unwrap();
 
     println!("{:?}", tokens)
-}
+} }
